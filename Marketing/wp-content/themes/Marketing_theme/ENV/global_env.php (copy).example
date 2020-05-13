@@ -1,0 +1,42 @@
+<?php
+
+/*
+ * Author: Ravi Rose
+ * created on: 9-july-2019
+ * version: 1.0
+ * Last-Updated-On: Null
+ * File is used to store global env varibles.
+*/
+
+/*
+ * Set google re-captcha public api key
+ */
+putenv("RE_CAPTCHA_PUBLIC=6LfgZp0UAAAAAJrHkxb6uEGTP9gBvVguYRTKMcze");
+
+/*
+ * Set google re-captcha secret api key
+ */
+putenv("RE_CAPTCHA_SECRET=6LfgZp0UAAAAAMauy5bjO5nLLDhTDsIDqnf16iHY");
+
+/*
+ * Set google map API key
+ */
+putenv("OT_GMAP_API=AIzaSyBLmHXYR0bPNwM97-yFrjl3bcQFCjQnGXI");
+
+/*
+ * GMAIL Username for SMTP
+ */
+putenv("OT_GMAIL_USERNAME=marketing@oodlestechnologies.com");
+
+/*
+ * GMAIL Password for SMTP
+ */
+putenv("OT_GMAIL_PASSWORD=Evolve@oodles");
+
+/*
+ * GMAIL HOST for SMTP
+ */
+putenv("OT_GMAIL_HOST=smtp.gmail.com");
+
+
+?>

@@ -1,0 +1,295 @@
+.checkout {
+    
+    
+    .user-address-list {
+    
+        ul {
+            margin: 0 0 30px;
+            padding: 0;
+            list-style: none;
+            list-style-type: none;
+        }
+
+
+        li {
+            border: 2px solid #ccc;
+            padding: 10px 30px;
+            margin: 5px 0;
+
+            &:hover {
+                cursor: pointer;
+                border-color: #999;
+            }
+
+            &.selected {
+                border-color: $green;
+                background-color: $green;
+                color: #fff;
+
+            }
+
+            .email {
+                font-style: italic;
+                opacity: .8;
+
+            }
+        }
+    }
+
+    .open-form {
+        .new-address-form {
+            max-height: none;
+            opacity: 1;
+            transition: opacity .5s ease;
+        }
+        
+        .new-address-button {
+            display: none;
+        }
+        
+    }
+
+    .new-address-form {
+        max-height: 0;
+        opacity: 0;
+		overflow: hidden;
+        
+        margin-top: 40px;
+
+        h3 {
+            text-align: left;
+        }
+
+        button {
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+
+        
+        
+        form > div {
+            margin: 1.5px 0;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            
+            &.firstname, &.lastname {
+                width: 50%;
+            }
+
+            &.firstname {
+                width: 49%;
+                margin-right: 1%;
+                float: left;
+            }
+
+            &.code {
+                width: 35%;
+                float: left;
+                margin-right: 1%;
+            }
+
+            &.city {
+                margin-right: 1%;
+                width: 43%;
+                float: left;
+				
+				@media(min-width: 500px) {
+					width: 50%;
+				}
+				
+				@media(min-width: $bp1) {
+					width: 43%
+				}
+				
+				@media(min-width: $bp2) {
+					width: 50%;
+				}
+            }
+            
+            &.country {
+                width: 20%;
+				
+				@media(min-width: 500px) {
+					width: 13%;
+				}
+				
+				@media(min-width: $bp1) {
+					width: 20%
+				}
+				
+				@media(min-width: $bp2) {
+					width: 13%;
+				}
+            }
+            
+            &.error input {
+                border-color: $red;
+            }
+            
+            label {
+                
+                display: none;
+                
+                box-sizing: border-box;
+                position: absolute;
+                bottom: 100%;
+                width: 100%;
+                padding: 5px 10px;
+                font-size: 11px;
+                background-color: #eee;
+                transform: rotateX(90deg);
+                transform-origin: bottom;
+                transition: all ease .3s;
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            input:focus + label {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+            
+            &.error label {
+                background-color: $red;
+                color: $textwhite;
+            }
+            
+        }
+        
+        
+        
+        input {
+            margin: 0;
+        }
+        
+        select {
+            font-size: 15px;
+            margin: 0;
+            height: 40px;
+
+        }
+
+        
+
+        .note {
+            
+            textarea {
+                margin: 0;
+                height: 200px;
+            }
+            
+            
+        }
+
+    }
+    
+    
+    #cart-preview {
+        
+        .copy {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+        .cart {
+            
+            li {
+                padding-right: 40px;
+            }
+
+            .button.checkout {
+                display: none;
+            }
+
+            .item:hover {
+                background-color: transparent;
+                cursor: default;
+
+            }
+
+            .remove {
+                opacity: .3;
+                transform: none;
+                background-color: transparent;
+                color: $red;
+                width: 40px;
+                padding: 15px 0;
+                text-align: center;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+        }
+    }
+
+    
+
+    #payment-choice {
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+            list-style-type: none;
+            padding: 3px;
+
+            input:hover, label:hover {
+                cursor: pointer;
+            }
+
+            input {
+                margin-right: 10px;
+            }
+            
+            .disabled {
+                color: #ccc;
+                
+                &:after {
+                    content: " (soon)"
+                }
+            }
+        }
+
+    }
+
+
+    .button.buy {
+        width: 100%;
+        display: block;
+        height: 60px;
+//        background-color: $ocker;
+        color: #fff;
+        margin-top: 100px;
+    }
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

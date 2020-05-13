@@ -1,0 +1,27 @@
+.home article:first-child .units-1 > div {
+    
+	
+}
+
+.newsletter-form .subscribe {
+    float: left;
+}
+
+.newsletter-form input {
+	font-size: 1.3em;
+	padding: .5em 1em;
+	
+//	padding: .5em 0;
+//	border: 0px;
+//	border-bottom: 1px solid #ccc;
+//	background: transparent;
+}
+
+.quatsch-arrow:before {
+    content: "\2191";
+    
+    @media(min-width: $bp1) {
+        content: "\2190";
+    }
+    
+}

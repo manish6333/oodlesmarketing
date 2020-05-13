@@ -1,0 +1,35 @@
+.confirmation {
+    
+    .payment-information {
+        
+        display: none;
+        
+        ul {
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+            list-style-type: none;
+            padding: 5px 0;
+            border-bottom: 1px solid #ccc;
+            
+            &:last-child {
+                border-bottom: 0;
+            }
+            
+            span {
+                float: right;
+            }
+        }
+		
+		.button.pay {
+			width: 100%;
+			background-color: $green;
+			padding: 1em 0;
+		}
+        
+    }
+    
+    
+}

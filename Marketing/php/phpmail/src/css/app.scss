@@ -1,0 +1,450 @@
+@import 'branding';
+@import 'helper';
+@import 'grid';
+@import 'navigation';
+@import 'cart';
+@import 'product';
+@import 'productDetails';
+@import 'background';
+@import 'checkout';
+@import 'confirmation';
+@import 'custom';
+
+body {
+    background-color: $softwhite;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial;
+    color: $darkgrey;
+    font-size: 16px;
+}
+
+.loading-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    display: none;
+    
+    body.loading & {
+        display: block;
+    }
+    
+    .html-logo {
+        
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        top: 50%;
+        left: 50%;
+        margin-left: -35px;
+        margin-top: -35px;
+        animation: rotateIt 1s infinite;
+        
+        .drop {
+            width: 33px;
+            height: 33px;
+        }
+    }
+}
+
+header {
+    
+    .html-logo {
+        position: absolute;
+        left: 20px;
+        top: 10px;
+        height: 40px;
+        width: 40px;
+        z-index: 510;
+        
+//        border: 1px solid red;
+        
+        display: none;
+        
+        @media(min-width: $bp1) {
+//            display: block;
+            
+        }
+        
+        
+    }
+    
+    .title {
+        position: absolute;
+        left: 0;
+        height: 60px;
+        line-height: 60px;
+        z-index: 510;
+        margin-left: 70px;
+        
+        a:before {
+            content: "Einzlstck";
+            display: inline;
+        }
+        
+        span {
+            display: none;
+        }
+    }
+    
+    @media(min-width: $bp1) {
+        
+        .title {
+            // values if html logo is visible
+//            left: 70px;
+            margin-left: 20px;
+            
+            // values without html logo
+            
+            
+            
+            a:before {
+                display: none;
+            }
+            
+            span {
+                display: inline;
+            }
+        }
+        
+    }
+    
+    .right-area {
+        position: absolute;
+        z-index: 510;
+        top: 0;
+        right: 0;
+        height: 60px;
+    }
+    
+    .cart-button {
+        float: right;
+        white-space: nowrap;
+        height: 60px;
+        padding: 0 20px;
+        line-height: 60px;
+        margin: 0 0px;
+		
+		[data-route="confirmation"] &, [data-route="gateway"] & {
+			display: none;
+		}
+        
+        &.open {
+            
+            background-color: $beigewhite;
+            
+            i:before {
+                content: "\f00d";
+            }
+            
+            .total-items {
+                display: none;
+            }
+			
+			.total-price {
+				display: none;
+			}
+            
+        }
+
+        .total-items {
+            font-size: .8em;
+            
+            &:before {
+                content: "|";
+                display: inline-block;
+                margin-right: 3px;
+            }
+			
+			&:after {
+				content: "items";
+				display: inline-block;
+				margin-left: 3px;
+			}
+            
+            &:empty {
+                display: none;
+            }
+        }
+        
+        .total-price {
+            font-size: .8em;
+			
+			&:after {
+				content: "€";
+			}
+			
+            &:before {
+                content: "|";
+                display: inline-block;
+                margin-right: 3px;
+            }
+			
+			&:empty {
+                display: none;
+            }
+        }
+        
+        &:hover {
+            cursor: pointer;
+            background-color: $beigewhite;
+        }
+    }
+    
+    .language-button {
+        float: right;
+        display: inline-block;
+        margin-right: 10px;
+        font-size: .8em;
+        
+		display: none;
+		
+        &:hover {
+            cursor: pointer;
+            background-color: $beigewhite;
+        }
+        
+        span {
+            display: inline-block;
+            height: 60px;
+            line-height: 60px;
+            padding: 0 20px;
+        }
+        
+        body[data-active-lang="en"] & span[data-language="en"] {
+            display: none;
+        }
+        
+        body[data-active-lang="de"] & span[data-language="de"] {
+            display: none;
+        }
+    }
+    
+    
+}
+
+.copy {
+    box-sizing: border-box;
+    padding: 50px 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    line-height: 1.4em;
+    
+    @media(min-width: $bp1) {
+        padding: 50px;
+    }
+	
+	@media(min-width: $bp2) {
+        padding: 70px;
+    }
+    
+    @extend .clearfix;
+    
+    .csstransforms &.center-y {
+        
+        
+        @media(min-width: $bp1) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: auto;
+            
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+		
+		p {
+			max-width: 400px;
+			margin: 0 auto;
+		}
+    }
+    
+    
+    
+    a {
+        color: $blue;
+        font-weight: bold;
+    }
+
+}
+
+
+.link {
+	
+    min-height: 300px;
+    
+    @media(min-width: $bp1) {
+        min-height: 0px;
+    }
+    
+	
+	a {
+		position: absolute;
+		box-sizing: border-box;
+		display: block;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transition: all ease .3s;
+		
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			transition: all ease .3s;
+			transform: scale(.95);
+		}
+		
+		&:hover {
+			
+			color: $textwhite;
+			
+			&:after {
+				background-color: $red;
+				transform: scale(1);
+			}
+		}
+		
+		.link-text {
+			z-index: 1;
+			font-size: 1.2em;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	
+}
+
+
+
+
+
+/*------------------------------------*\
+    NOTIFICATION
+\*------------------------------------*/
+
+#notification {
+    z-index: 9999;
+    position: fixed;
+    left: 0;
+    right: 0;
+    line-height: 40px;
+    text-align: center;
+    color: #f3f3f3;
+    backface-visibility: hidden;
+    
+    // position & animation for mobile
+    transform: translate3d(0, 0%, 0);
+    bottom: 0;
+    transition: transform ease .3s;
+    
+    @media(min-width: $bp1) {
+        
+        // remove mobile style
+        bottom: auto;
+        
+        // position & animation for desktop
+        top: 60px;
+        height: 40px;
+        overflow: hidden;
+        transition: height ease .5s;
+        
+    }
+    
+    &.hide {
+        
+        // position & animation for mobile
+        transform: translate3d(0, 100%, 0);
+        
+        @media(min-width: $bp1) {
+            
+            // position & animation for desktop
+            height: 0;
+            transform: translate3d(0, 0%, 0);
+        
+            .message {
+
+                opacity: 0;
+                transition-delay: 0s;
+                transform: translate3d(0, -15px, 0);
+            }
+        }
+    }
+    
+    &.success { background-color: $green; }
+    &.error { background-color: $red; color: $softwhite !important }
+    &.info { background-color: $yellow; }
+    
+    .message {
+        opacity: 1;
+        transform: translate3d(0, 0px, 0);
+        transition: all ease .2s .2s;
+    }
+}
+
+footer {
+	.links {
+		padding: 10px 0;
+		border-bottom: 1px solid #ccc;
+		
+		@media(min-width: $bp1) {
+			float: right;
+			border-bottom: 0px;
+		}
+	}
+	.copyright {
+		padding: 10px 0;
+	}
+}
+
+
+
+
+/*------------------------------------*\
+    SPECIAL LINKS
+\*------------------------------------*/
+
+.social-links {
+	white-space: nowrap;
+}
+
+.twitter-link, .insta-link, .facebook-link {
+	
+	.copy & {
+		font-size: 2em;
+		padding: 5px 15px;
+		color: $darkgrey;
+		
+		@media(min-width: $bp1) {
+			padding: 10px 20px;
+		}
+		
+		@media(min-width: $bp2) {
+			padding: 10px 30px;
+		}
+	}
+    
+}
+
+.twitter-link:hover i:before {
+    color: #55ACEE;
+}
+
+.insta-link:hover i:before {
+    color: #517fa4;
+}
+
+.facebook-link:hover i:before {
+    color: #3b5998;
+}

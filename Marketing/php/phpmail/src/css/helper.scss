@@ -1,0 +1,28 @@
+.clearfix:after {
+    content: "";
+    display: table;
+    visibility: hidden;
+    height: 0;
+    float: none;
+    clear: both;
+}
+
+.limit-width {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.no-scroll-mobile {
+	
+	overflow: hidden;
+	
+	body {
+		position: relative;
+		overflow: hidden;
+	}
+	
+	@media(min-width: $bp1) {
+		overflow: auto;
+	}
+	
+}
